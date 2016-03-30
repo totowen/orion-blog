@@ -1,0 +1,36 @@
+<template name="postItem">
+  <div class="container">
+	<header>
+      <h1>Post Page</h1>
+      <a href="{{pathForBackPostsList}}">Back</a>
+       <br>
+
+    </header>
+
+      <section>
+          <div class="row">
+              <div class="col-md-8">
+                  {{#if Template.subscriptionsReady}}
+                      {{#with post}}
+                          <h3 class="center-block">{{title}}</h3>
+                          <h4><i class="fa fa-rmb"></i>{{al_total}}<br><small>已筹金额 </small></h4>
+                          <p><img src="{{image.url}}" width="640px"><br>
+                          {{{body}}}</p>
+                      {{/with}}
+                  {{else}}
+                      <p>Loading...</p>
+                  {{/if}}
+              </div>
+              <div class="col-md-4">
+                {{>productsList}}
+              </div>
+          </div>
+      </section>
+    <hr>
+
+    <footer>
+      <p>Orion Blog</p>
+    </footer>
+  </div>
+
+</template>
